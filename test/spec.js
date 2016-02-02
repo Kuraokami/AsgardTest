@@ -20,7 +20,7 @@ describe('Application Test', function() {
        expect(element(by.xpath('/html/body/div/aside[1]/section/ul/li[2]/a/span')).getText()).toEqual('Connections');
     });
     
-    it('should have backgroud color #367fa9', function() {
+    xit('should have backgroud color #367fa9', function() {
         browser.get('http://localhost:3000/');
         
         var leftBar = element(by.xpath('/html/body/div/aside[1]'));
@@ -39,5 +39,40 @@ describe('Application Test', function() {
        */
       
     });
+    
+    xit('should have shown two gateways', function() {
+        browser.get('http://localhost:3000/');
+        var gateways = element.all(by.repeater('gateway in dataGateways'));
+        expect(gateways.count()).toEqual(2);
+    });
 
+    xit('should have first gateways MySql', function() {
+        browser.get('http://localhost:3000/');
+        var gateways = element.all(by.repeater('gateway in dataGateways').column('gateway.name'));
+        expect(gateways.first().getText()).toEqual('Microsoft SQL Server');
+    });
+    
+    xit('should have first gateways MySql', function() {
+        browser.get('http://localhost:3000/');
+        element(by.model('sort-name')).click();
+        var gateways = element.all(by.repeater('gateway in dataGateways').column('gateway.name'));
+        expect(gateways.first().getText()).toEqual('Oracle');
+    });
+    
+    xit('should have first gateways MySql', function() {
+        browser.get('http://localhost:3000/');
+        element(by.model('sort-name')).click();
+        element(by.model('sort-name')).click();
+        var gateways = element.all(by.repeater('gateway in dataGateways').column('gateway.name'));
+        expect(gateways.first().getText()).toEqual('Microsoft SQL Server');
+    });
+
+    it('should have first gateways MySql', function() {
+        browser.get('http://localhost:3000/');
+        element(by.model('searchDataGateway')).sendKeys('Oracle');
+        
+        var gateways = element.all(by.repeater('gateway in dataGateways').column('gateway.name'));
+        expect(gateways.count()).toEqual(1);
+        expect(gateways.first().getText()).toEqual('Oracle');
+    });
 });
