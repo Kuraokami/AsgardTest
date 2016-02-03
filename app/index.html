@@ -25,6 +25,7 @@
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
 
   </head>
 
@@ -107,87 +108,7 @@
           <h1>
             Gateways
           </h1>
-          
-          <div class="container" ng-app="sortApp" ng-controller="dataGatewaysController">
-            <form>
-                <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
-
-                    <input type="text" class="form-control" placeholder="Search data gateway" ng-model="searchDataGateway">
-
-                </div>      
-                </div>
-            </form>
-        
-           <table class="table table-bordered table-striped">
-            <thead>
-            <tr>
-                <td>
-                <a href="#" ng-click="sortType = 'id';  sortReverse = !sortReverse"">
-                    Id 
-                    <span ng-show="sortType == 'id' && !sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'id' && sortReverse" class="fa fa-caret-up"></span>          </a>
-                </td>
-                <td>
-                <a href="#" ng-model='sort-name', ng-click="sortType = 'name';  sortReverse = !sortReverse"">
-                Name 
-                <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>          </a>
-                </td>
-                <td>
-                <a href="#" ng-click="sortType = 'description';  sortReverse = !sortReverse"">
-                Description 
-                <span ng-show="sortType == 'description' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'description' && sortReverse" class="fa fa-caret-up"></span>
-                </a>
-                </td>
-            </tr>
-          </thead>
-            
-            <tbody>
-            <tr ng-repeat="gateway in dataGateways | orderBy:sortType:sortReverse | filter:searchDataGateway">
-                <td>{{ gateway.id }}</td>
-                <td>{{ gateway.name }}</td>
-                <td>{{ gateway.description }}</td>
-            </tr>
-            </tbody>
-            
-        </table>
-        </div>
-
-          
-          <!--ol class="breadcrumb">
-            <li>
-              <a href="#">
-                <i class="fa fa-dashboard"></i>
-                Level</a>
-            </li>
-            <li class="active">Here</li>
-          </ol>
-        </section-->
-
-        <!-- Main content -->
-        <!--section class="content">
-
-          <p>Nothing here
-            {{'yet' + '!'}}</p>
-          <p>
-            Amazing math happening 1 + 2 =
-            {{1 + 2}}
-          </p>
-
-          <ul>
-            <li ng-repeat="phone in phones">
-              <span>{{phone.name}}</span>
-              <p>
-                {{phone.snippet}}
-              </p>
-            </li>
-          </ul>
-
-        </section-->
-        <!-- /.content -->
+          <gateways-list></gateways-list>
       </div>
       <!-- /.content-wrapper -->
 
