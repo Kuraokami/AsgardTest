@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h3 class="modal-title">Add New Gateway</h3>
+</div>
+<div class="modal-body">
+    <form name="addNewGatewayForm" novalidate>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" ng-model="current.name" placeholder="Enter name" required/>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" ng-model="current.description" placeholder="Enter description" required/>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" ng-model="current.username" placeholder="Username" required/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" ng-model="current.password" placeholder="Password" required/>
+        </div>
+        <div class="form-group">
+            <label for="repeatPassword">Repeat Password</label>
+            <input ng-model='current.repeat_password' class="form-control" type="password" name='repeat_password' placeholder='Confirm Password'
+            password-verify="current.password"">
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()" ng-disabled="addNewGatewayForm.$invalid">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>

@@ -25,14 +25,15 @@ describe('Application Test', function() {
         
         var leftBar = element(by.xpath('/html/body/div/aside[1]'));
         var cssColor = leftBar.getCssValue('background-color');
-        /*
+
+/*        
       leftBar.getCssValue('background-color').then(function(bgColor) {
             console.log(bgColor);
         });
-      */
+      
         console.log(cssColor);
         expect(cssColor).toEqual('rgba(54, 127, 169, 1)');
-
+*/
         /*
         
         console.log(cssColor);
@@ -67,12 +68,30 @@ describe('Application Test', function() {
         expect(gateways.first().getText()).toEqual('Microsoft SQL Server');
     });
 
-    it('should have first gateways MySql', function() {
+    xit('should have first gateways MySql', function() {
         browser.get('http://localhost:3000/');
         element(by.model('searchDataGateway')).sendKeys('Oracle');
         
         var gateways = element.all(by.repeater('gateway in dataGateways').column('gateway.name'));
         expect(gateways.count()).toEqual(1);
         expect(gateways.first().getText()).toEqual('Oracle');
+    });
+    
+    it('Create a new gateway', function() {
+        browser.get('http://localhost:3000/');
+        
+        element(by.model('add-new-gateway-button')).click();
+        element(by.id('name')).sendKeys('New gateway');
+        element(by.id('description')).sendKeys('The description for my test');
+        element(by.id('password')).sendKeys('abc123');
+        element(by.id('repeat_password')).sendKeys('abc123');
+        element(by.model('save-gateway-button')).click();
+        
+        
+        /*
+        var gateways = element.all(by.repeater('gateway in dataGateways').column('gateway.name'));
+        expect(gateways.count()).toEqual(1);
+        expect(gateways.first().getText()).toEqual('Oracle');
+        */
     });
 });

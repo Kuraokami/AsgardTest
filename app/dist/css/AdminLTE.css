@@ -1243,6 +1243,12 @@ a:focus {
   border-color: #3c8dbc;
   box-shadow: none;
 }
+
+.form-control:invalid {
+  border-color: #ff0000;
+  box-shadow: none;
+}
+
 .form-control::-moz-placeholder,
 .form-control:-ms-input-placeholder,
 .form-control::-webkit-input-placeholder {
@@ -1254,6 +1260,7 @@ a:focus {
   -moz-appearance: none;
   appearance: none;
 }
+
 .form-group.has-success label {
   color: #00a65a;
 }
