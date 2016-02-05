@@ -57,14 +57,14 @@
     },
     {
         "id": 9,
-        "name": "SAP 2",
+        "name": "ZAP 2",
         "description": "",
         "username": "isalepb",
         "password": "bpelasi"
     },
     {
         "id": 10,
-        "name": "SAP Tres",
+        "name": "1 SAP Tres",
         "description": "Last database for test",
         "username": "frodriguez",
         "password": "other"
