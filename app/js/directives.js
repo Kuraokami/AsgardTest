@@ -14,22 +14,22 @@ Asgard.directive('passwordVerify', function () {
         restrict: 'A',
         require: 'ngModel',
         scope: {
-          repeat: '=ngModel',
-          password: '=passwordVerify'
+            repeat: '=ngModel',
+            password: '=passwordVerify'
         },
         link: function (scope, element, attributes, control) {
-            control.$parsers.unshift(function(viewValue){
+            control.$parsers.unshift(function (viewValue) {
                 var origin = scope.password;
-                if(origin!==viewValue){
+                if (origin !== viewValue) {
                     control.$setValidity("passwordVerify", false);
                     return undefined;
-                }else{
+                } else {
                     control.$setValidity("passwordVerify", true);
                     return viewValue;
                 }
             });
-            
-            scope.$watch("password", function() {
+
+            scope.$watch("password", function () {
                 if (scope.password !== scope.repeat) {
                     control.$setValidity("passwordVerify", false);
                 } else {

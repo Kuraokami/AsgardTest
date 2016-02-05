@@ -2,41 +2,71 @@
     {
         "id": 1,
         "name": "Microsoft SQL Server",
-        "description": "",
+        "description": "Gateway configurate with SqlServer",
         "username": "aperdomob",
-        "password": "",
-        "Connection": {
-            "type": "SqlServer",
-            "name": "Sql Server Connection",
-            "description": "My Sql Server connection for test",
-            "HostAddress": "198.168.1.10",
-            "Port": "3306",
-            "Scheme": "default",
-            "Username": "sa",
-            "Password": "admin123",
-            "UseSLL": "y",
-            "RequiredSll": "y",
-            "VerifyServerCertification": "n"
-        }
+        "password": ""
     },
     {
         "id": 2,
         "name": "Oracle",
-        "description": "",
+        "description": "Gateway configurate with Oracle",
         "username": "frodriguez",
-        "password": "",
-        "Connection": {
-            "type": "Oracle",
-            "name": "Oracle SQL Engine",
-            "description": "My Sql Server connection for test",
-            "HostAddress": "198.168.1.10",
-            "Port": "3306",
-            "Scheme": "default",
-            "Username": "sa",
-            "Password": "admin123",
-            "UseSLL": "y",
-            "RequiredSll": "y",
-            "VerifyServerCertification": "n"
-        }
+        "password": ""
+    },
+    {
+        "id": 3,
+        "name": "SAP",
+        "description": "Gateway configurate with SAP",
+        "username": "frodriguez",
+        "password": ""
+    },
+    {
+        "id": 4,
+        "name": "Siebel",
+        "description": "Gateway configurate with Siebel",
+        "username": "aperdomob",
+        "password": ""
+    },
+    {
+        "id": 5,
+        "name": "IBM DB2",
+        "description": "Gateway configurate with IBM DB2",
+        "username": "frodriguez",
+        "password": ""
+    },
+    {
+        "id": 6,
+        "name": "MySql",
+        "description": "Gateway configurate with MySql",
+        "username": "aperdomob",
+        "password": ""
+    },
+    {
+        "id": 7,
+        "name": "Other Oracle Gateway",
+        "description": "This is other gateway of oracle",
+        "username": "testUser",
+        "password": "abc123"
+    },
+    {
+        "id": 8,
+        "name": "MySql second gateway",
+        "description": "MySql gateway for test",
+        "username": "tester",
+        "password": "123456"
+    },
+    {
+        "id": 9,
+        "name": "SAP 2",
+        "description": "",
+        "username": "isalepb",
+        "password": "bpelasi"
+    },
+    {
+        "id": 10,
+        "name": "SAP Tres",
+        "description": "Last database for test",
+        "username": "frodriguez",
+        "password": "other"
     }
 ]

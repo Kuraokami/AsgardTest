@@ -3,24 +3,11 @@
 /* Controllers */
 var Asgard = angular.module('AsgardApp', ['ui.bootstrap']);
 
-/* Controllers */
-/*
-Asgard.controller('dataGatewaysController', function ($scope) {
-
-    $scope.sortType = 'name';
-    $scope.sortReverse = false;
-    $scope.searchDataGateway = '';
-    $scope.dataGateways = [];
-
-});
-*/
-
 Asgard.controller('dataGatewaysController', ['$scope', '$http', function ($scope, $http) {
 
     $scope.sortType = 'name';
     $scope.sortReverse = false;
     $scope.searchDataGateway = '';
-
 
     $http.get('../gateways.json').then(function (response) {
         $scope.dataGateways = response.data;
@@ -35,7 +22,7 @@ Asgard.controller('OpenNewGatewayModalController', function ($scope, $uibModal, 
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'add-new-gateway.html',
-            controller: 'ModalInstanceCtrl',
+            controller: 'ModalInstanceController',
             size: 'sm'
         });
 
@@ -49,7 +36,7 @@ Asgard.controller('OpenNewGatewayModalController', function ($scope, $uibModal, 
     };
 });
 
-Asgard.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance/*, items*/) {
+Asgard.controller('ModalInstanceController', function ($scope, $uibModalInstance/*, items*/) {
 
     $scope.current = {};
 
